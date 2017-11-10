@@ -1,5 +1,5 @@
 import React from 'react'
-import TeamList from './Teams/TeamList'
+import { Link } from 'react-router-dom'
 
 const HomePage = (props) => {
     return (
@@ -9,7 +9,7 @@ const HomePage = (props) => {
                     return (
                         <div>
                             <h5>{team.name}</h5>
-                            <img src={team.logo} alt={`${team.name} logo`} />
+                            <Link to={`/${team.id}`}><img src={team.logo} alt={`${team.name} logo`} /></Link>
                         </div>
                     )
                 })
