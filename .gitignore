@@ -14,3 +14,12 @@
 !/tmp/.keep
 
 .byebug_history
+
+# Client ID - zRMPEHJeYaDQPsfhQC6lzw
+# Client Secret - nhD7gXJiTUk8Z535yfAb16tXX6GVoZsdqD1bKJrdmUHgft8MvSMvlq5g4mhEf6Y6
+
+{
+    "access_token": "YSSzmJy6PrYdi0iHDnKc7jbKfHG6hIwu-6BP07DSTKN_Sm65Lz2YgyG6-3xIkqTik1h9aynFFhu7aXtx1wK06WzlupxSdX92W_ytwLa1liL7j1hthDTjm7Bw3DAGWnYx",
+    "expires_in": 637127730,
+    "token_type": "Bearer"
+}
