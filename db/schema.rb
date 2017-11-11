@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110195609) do
+ActiveRecord::Schema.define(version: 20171111155933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.integer "rating"
+    t.string "image_url"
+    t.string "yelp_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_bars_on_team_id"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
@@ -22,4 +33,5 @@ ActiveRecord::Schema.define(version: 20171110195609) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bars", "teams"
 end
