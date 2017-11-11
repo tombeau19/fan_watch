@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 import HomePage from './components/HomePage'
 import TeamList from './components/Teams/TeamList'
+import BarPage from './components/Bars/BarPage'
 
 
 class App extends Component {
 
   state = {
-    teams: [],
+    teams: []
   }
 
   async componentWillMount() {
@@ -34,6 +35,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={HomePageComponent} />
             <Route exact path='/:team_id' component={TeamList} />
+            <Route exact path='/:team_id/bars/:id' component={BarPage} />
           </Switch>
         </div>
       </Router>

@@ -7,7 +7,7 @@ const BarList = (props) => {
             {props.bars.map((bar) => {
                 return (
                     <div>
-                        {bar.name}
+                        <Link to={`/${props.team.id}/bars/${bar.id}`}>{bar.name}</Link>
                     </div>
                 )
             })}
