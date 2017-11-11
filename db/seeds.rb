@@ -146,18 +146,18 @@
 #     logo: "http://content.sportslogos.net/logos/7/176/thumbs/17636702014.gif"
 # })
 
-Bar.create({
-    name: "Meehan's Public House",
-    rating: 3.5,
-    image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/EGnfKMklZVxgVNf36mzNqA/o.jpg",
-    yelp_id: 'meehans-public-house-atlanta-6',
-    team_id: 1
-})
+# Bar.create({
+#     name: "Meehan's Public House",
+#     rating: 3.5,
+#     image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/EGnfKMklZVxgVNf36mzNqA/o.jpg",
+#     yelp_id: 'meehans-public-house-atlanta-6',
+#     team_id: 1
+# })
 
-Bar.create({
-    name: 'Elliott Street Deli & Pub',
-    rating: 4.5,
-    image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/tcnXDrIWQS_SUXPxsw9zDQ/o.jpg",
-    yelp_id: 'elliott-street-deli-and-pub-atlanta',
-    team_id: 1
-})
+# Bar.create({
+#     name: 'Elliott Street Deli & Pub',
+#     rating: 4.5,
+#     image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/tcnXDrIWQS_SUXPxsw9zDQ/o.jpg",
+#     yelp_id: 'elliott-street-deli-and-pub-atlanta',
+#     team_id: 1
+# })
