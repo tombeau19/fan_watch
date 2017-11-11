@@ -1,5 +1,5 @@
 # Team.destroy_all
-Bar.destroy_all
+# Bar.destroy_all
 
 # # AFC EAST
 # Team.create({
@@ -147,18 +147,30 @@ Bar.destroy_all
 #     logo: "http://content.sportslogos.net/logos/7/176/thumbs/17636702014.gif"
 # })
 
-Bar.create({
-    name: "Meehan's Public House",
-    rating: 3.5,
-    image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/EGnfKMklZVxgVNf36mzNqA/o.jpg",
-    yelp_id: 'meehans-public-house-atlanta-6',
-    team_id: 1
+# Bar.create({
+#     name: "Meehan's Public House",
+#     rating: 3.5,
+#     image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/EGnfKMklZVxgVNf36mzNqA/o.jpg",
+#     yelp_id: 'meehans-public-house-atlanta-6',
+#     team_id: 1
+# })
+
+# Bar.create({
+#     name: 'Elliott Street Deli & Pub',
+#     rating: 4.5,
+#     image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/tcnXDrIWQS_SUXPxsw9zDQ/o.jpg",
+#     yelp_id: 'elliott-street-deli-and-pub-atlanta',
+#     team_id: 1
+# })
+
+Post.create({
+    title: 'NO SOUND!!!',
+    content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
+    bar_id: 2
 })
 
-Bar.create({
-    name: 'Elliott Street Deli & Pub',
-    rating: 4.5,
-    image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/tcnXDrIWQS_SUXPxsw9zDQ/o.jpg",
-    yelp_id: 'elliott-street-deli-and-pub-atlanta',
-    team_id: 1
+Post.create({
+    title: 'Great Atmosphere',
+    content: 'We might as well have been at Gillette stadium. Tons of people, tons of chants. Incredible place to watch the game.',
+    bar_id: 1
 })
