@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BarPage from './BarPage'
 
 const BarList = (props) => {
 
@@ -8,7 +9,8 @@ const BarList = (props) => {
             {props.bars.map((bar) => {
                 return (
                     <div>
-                        <Link to={`/${props.team.id}/bars/${bar.id}`}>{bar.name}</Link>
+                        <button onClick={props.toggleShowBarPage}>{bar.name}</button>
+                        {props.showBarPage ? <BarPage bar={bar}/>:null}
                     </div>
                 )
             })}

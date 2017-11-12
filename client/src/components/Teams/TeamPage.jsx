@@ -8,7 +8,8 @@ class TeamPage extends Component {
     state = {
         team: {},
         bars: [],
-        posts:[]
+        posts:[],
+        showBarPage: false
     }
 
     componentWillMount() {
@@ -31,16 +32,26 @@ class TeamPage extends Component {
         }
     }
 
-    getBarInfoAndPosts = () => {
-        
+    getBarInfoAndPosts = async () => {
+        try {
+            const { team_id, bar_id } = this.props.match.params
+            const response = await axios.get(`/api/teams/${team_id}/bars/${bar_id}/posts`)
+            this.setState({ posts: response.data })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    toggleShowBarPage = (event) => {
+        event.preventDefault()
+        this.setState({ showBarPage: !this.state.showBarPage})
     }
 
     render() {
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
-                <BarList team={this.state.team} bars={this.state.bars} />
-                <BarPage team={this.state.team} bars={this.state.bars}/>
+                <BarList team={this.state.team} bars={this.state.bars} showBarPage={this.state.showBarPage} toggleShowBarPage={this.toggleShowBarPage}/>
             </div>
         )
     }
