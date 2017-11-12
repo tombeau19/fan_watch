@@ -163,14 +163,20 @@
 #     team_id: 1
 # })
 
+# Post.create({
+#     title: 'NO SOUND!!!',
+#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
+#     bar_id: 2
+# })
+
+# Post.create({
+#     title: 'Great Atmosphere',
+#     content: 'We might as well have been at Gillette stadium. Tons of people, tons of chants. Incredible place to watch the game.',
+#     bar_id: 1
+# })
+
 Post.create({
     title: 'NO SOUND!!!',
     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
-    bar_id: 2
-})
-
-Post.create({
-    title: 'Great Atmosphere',
-    content: 'We might as well have been at Gillette stadium. Tons of people, tons of chants. Incredible place to watch the game.',
     bar_id: 1
 })
