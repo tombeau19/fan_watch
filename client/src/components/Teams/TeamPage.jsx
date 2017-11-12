@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import BarList from '../Bars/BarList'
+import BarPage from '../Bars/BarPage'
 
 class TeamPage extends Component {
 
     state = {
         team: {},
-        bars: []
+        bars: [],
+        posts:[]
     }
 
     componentWillMount() {
@@ -29,11 +31,16 @@ class TeamPage extends Component {
         }
     }
 
+    getBarInfoAndPosts = () => {
+        
+    }
+
     render() {
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
                 <BarList team={this.state.team} bars={this.state.bars} />
+                <BarPage team={this.state.team} bars={this.state.bars}/>
             </div>
         )
     }

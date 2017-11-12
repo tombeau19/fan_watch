@@ -39,7 +39,6 @@ class BarPage extends Component {
     getBarPosts = async () => {
         try {
             const { team_id, bar_id } = this.props.match.params
-            console.log(bar_id)
             const response = await axios.get(`/api/teams/${team_id}/bars/${bar_id}/posts`)
             this.setState({ posts: response.data })
         } catch (err) {
