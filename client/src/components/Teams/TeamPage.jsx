@@ -40,7 +40,7 @@ class TeamPage extends Component {
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
                 <BarList team={this.state.team} bars={this.state.bars} />
-                <BarPage team={this.state.team} bars={this.state.bars}/>
+                {/* <BarPage team={this.state.team} bars={this.state.bars}/> */}
             </div>
         )
     }
