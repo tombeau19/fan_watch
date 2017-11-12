@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import BarList from '../Bars/BarList'
 
-class TeamList extends Component {
+class TeamPage extends Component {
 
     state = {
         team: {},
@@ -10,10 +10,10 @@ class TeamList extends Component {
     }
 
     componentWillMount() {
-        this.getSingleTeam()
+        this.getSingleTeamAndTheirBars()
     }
 
-    async getSingleTeam() {
+    async getSingleTeamAndTheirBars() {
         try {
             const { team_id } = this.props.match.params
             const response = await axios.get(`/api/teams/${team_id}`)
@@ -21,7 +21,7 @@ class TeamList extends Component {
         } catch (err) {
             console.log(err)
         } try {
-            const { team_id } = this.props.match.params
+            const { team_id, id } = this.props.match.params
             const response = await axios.get(`/api/teams/${team_id}/bars`)
             this.setState({ bars: response.data })
         } catch (err) {
@@ -39,4 +39,4 @@ class TeamList extends Component {
     }
 }
 
-export default TeamList
+export default TeamPage

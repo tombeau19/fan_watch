@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 import HomePage from './components/HomePage'
-import TeamList from './components/Teams/TeamList'
+import TeamPage from './components/Teams/TeamPage'
 import BarPage from './components/Bars/BarPage'
 
 
@@ -34,7 +34,7 @@ class App extends Component {
           <h1>Fan Watch</h1>
           <Switch>
             <Route exact path='/' render={HomePageComponent} />
-            <Route exact path='/:team_id' component={TeamList} />
+            <Route exact path='/:team_id' component={TeamPage} />
             <Route exact path='/:team_id/bars/:id' component={BarPage} />
           </Switch>
         </div>
