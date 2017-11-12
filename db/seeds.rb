@@ -1,5 +1,6 @@
 # Team.destroy_all
 # Bar.destroy_all
+# Post.destroy_all
 
 # # AFC EAST
 # Team.create({
@@ -175,8 +176,8 @@
 #     bar_id: 1
 # })
 
-Post.create({
-    title: 'NO SOUND!!!',
-    content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
-    bar_id: 1
-})
+# Post.create({
+#     title: 'NO SOUND!!!',
+#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
+#     bar_id: 1
+# })
