@@ -8,7 +8,7 @@ class TeamPage extends Component {
     state = {
         team: {},
         bars: [],
-        posts:[],
+        bar: {},
         showBarPage: false
     }
 
@@ -35,23 +35,36 @@ class TeamPage extends Component {
     getBarInfoAndPosts = async () => {
         try {
             const { team_id, bar_id } = this.props.match.params
-            const response = await axios.get(`/api/teams/${team_id}/bars/${bar_id}/posts`)
-            this.setState({ posts: response.data })
+            const response = await axios.get(`/api/teams/${team_id}/bars/${bar_id}`)
+            this.setState({ bar: response.data })
         } catch (err) {
             console.log(err)
         }
     }
 
-    toggleShowBarPage = (event) => {
-        event.preventDefault()
-        this.setState({ showBarPage: !this.state.showBarPage})
+    toggleShowBarPage = async () => {
+        //event.preventDefault()
+        await this.getBarInfoAndPosts()
+        await this.setState({showBarPage: !this.state.showBarPage})
     }
 
     render() {
+
+        // if (this.state.showBarPage === true) {
+        //     return (
+        //         <div>
+        //             <h1>{this.state.team.name} Fan Page</h1>
+        //             <BarList bars={this.state.bars} getBarInfoAndPosts={this.getBarInfoAndPosts} toggleShowBarPage={this.toggleShowBarPage} />
+        //             <BarPage bars={this.state.bars} />
+        //         </div>
+        //     )
+        // }
+
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
-                <BarList team={this.state.team} bars={this.state.bars} showBarPage={this.state.showBarPage} toggleShowBarPage={this.toggleShowBarPage}/>
+                <BarList bars={this.state.bars} getBarInfoAndPosts={this.getBarInfoAndPosts} toggleShowBarPage={this.toggleShowBarPage}/>
+                {/* {this.state.showBarPage ? <BarPage bars={this.state.bars} /> : null} */}
             </div>
         )
     }

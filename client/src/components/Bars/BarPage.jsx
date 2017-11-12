@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios'
 import PostList from '../Posts/PostList'
 
@@ -49,7 +49,7 @@ const BarPage = (props) => {
  
         return (
             <div>
-                <h1>{props.bar.name}</h1>
+                <h1>bar page</h1>
             </div>
         )
     

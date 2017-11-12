@@ -6,7 +6,7 @@ class Api::BarsController < ApplicationController
 
     def show
         @bar = Bar.find(params[:id])
-        render json: @bar
+        render json: @bar, include: [:posts]
     end
 
     def create
