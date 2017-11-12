@@ -6,7 +6,6 @@ import HomePage from './components/HomePage'
 import TeamPage from './components/Teams/TeamPage'
 import BarPage from './components/Bars/BarPage'
 
-
 class App extends Component {
 
   state = {
@@ -35,7 +34,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={HomePageComponent} />
             <Route exact path='/:team_id' component={TeamPage} />
-            <Route exact path='/:team_id/bars/:id' component={BarPage} />
+            <Route exact path='/:team_id/bars/:bar_id' component={BarPage} />
           </Switch>
         </div>
       </Router>

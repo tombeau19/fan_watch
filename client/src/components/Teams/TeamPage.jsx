@@ -21,7 +21,7 @@ class TeamPage extends Component {
         } catch (err) {
             console.log(err)
         } try {
-            const { team_id, id } = this.props.match.params
+            const { team_id } = this.props.match.params
             const response = await axios.get(`/api/teams/${team_id}/bars`)
             this.setState({ bars: response.data })
         } catch (err) {
