@@ -15,7 +15,6 @@ class Api::BarsController < ApplicationController
         @team.bars << @bar 
         @team.save!
         render json: @bar
-    end
 
     private
     def bar_params
@@ -23,3 +22,4 @@ class Api::BarsController < ApplicationController
     end
 
 end
+
