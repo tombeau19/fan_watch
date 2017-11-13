@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resources :posts 
       end
     end
+    resources :bars
   end
 
 end

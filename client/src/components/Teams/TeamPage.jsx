@@ -37,12 +37,14 @@ class TeamPage extends Component {
         }
     }
 
-    async getSingleBarInfoAndPosts() {
+    async getSingleBarInfoAndPosts(id) {
         try {
-            const { team_id } = this.props.match.params
-            const bar_id = this.props.match.params.bars.bar.id
-            const response = await axios.get(`/api/teams/${team_id}/bars/${bar_id}`)
-            this.setState({ bar: response.data })
+            const bar_id = id
+            const response = await axios.get(`/api/bars/${bar_id}`)
+            this.setState({ 
+                bar: response.data,
+                showBarPage: !this.state.showBarPage
+            })
         } catch (err) {
             console.log(err)
         }
@@ -69,7 +71,7 @@ class TeamPage extends Component {
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
-                <BarList bars={this.state.bars} ggetSingleBarInfoAndPosts={this.getBarInfoAndPosts} toggleShowBarPage={this.toggleShowBarPage} />
+                <BarList bars={this.state.bars} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
                 {/* {this.state.showBarPage ? <BarPage bars={this.state.bars} /> : null} */}
             </div>
         )

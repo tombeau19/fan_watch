@@ -13,9 +13,9 @@ const BarList = (props) => {
                         {/* GIVEN I am on the TeamPage 
                         AND I see a List of bars
                         WHEN I click a bar name
-                        THEN I should see a list of posts below*/}
+                        THEN I should see a list of that bars posts below*/}
                         {/* GIVEN I have looked at the posts 
-                        WHEN I click the name again 
+                        WHEN I click the bar name again 
                         THEN it will hide the posts */}
                         {/* {bar.posts.map((post)=>{
                             return(
