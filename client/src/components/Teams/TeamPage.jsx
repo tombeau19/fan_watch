@@ -13,17 +13,22 @@ class TeamPage extends Component {
     }
 
     componentWillMount() {
-        this.getSingleTeamAndTheirBars()
+        this.getSingleTeam()
+        this.getSingleTeamBars()
     }
 
-    async getSingleTeamAndTheirBars() {
+    async getSingleTeam() {
         try {
             const { team_id } = this.props.match.params
             const response = await axios.get(`/api/teams/${team_id}`)
             this.setState({ team: response.data })
         } catch (err) {
             console.log(err)
-        } try {
+        }
+    }
+
+    async getSingleTeamBars() {
+        try {
             const { team_id } = this.props.match.params
             const response = await axios.get(`/api/teams/${team_id}/bars`)
             this.setState({ bars: response.data })
@@ -32,9 +37,10 @@ class TeamPage extends Component {
         }
     }
 
-    getBarInfoAndPosts = async () => {
+    async getSingleBarInfoAndPosts() {
         try {
-            const { team_id, bar_id } = this.props.match.params
+            const { team_id } = this.props.match.params
+            const bar_id = this.props.match.params.bars.bar.id
             const response = await axios.get(`/api/teams/${team_id}/bars/${bar_id}`)
             this.setState({ bar: response.data })
         } catch (err) {
@@ -44,8 +50,8 @@ class TeamPage extends Component {
 
     toggleShowBarPage = async () => {
         //event.preventDefault()
-        await this.getBarInfoAndPosts()
-        await this.setState({showBarPage: !this.state.showBarPage})
+        await this.getSingleBarInfoAndPosts()
+        await this.setState({ showBarPage: !this.state.showBarPage })
     }
 
     render() {
@@ -63,7 +69,7 @@ class TeamPage extends Component {
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
-                <BarList bars={this.state.bars} getBarInfoAndPosts={this.getBarInfoAndPosts} toggleShowBarPage={this.toggleShowBarPage}/>
+                <BarList bars={this.state.bars} ggetSingleBarInfoAndPosts={this.getBarInfoAndPosts} toggleShowBarPage={this.toggleShowBarPage} />
                 {/* {this.state.showBarPage ? <BarPage bars={this.state.bars} /> : null} */}
             </div>
         )

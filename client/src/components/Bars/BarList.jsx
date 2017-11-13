@@ -8,7 +8,7 @@ const BarList = (props) => {
             {props.bars.map((bar) => {
                 return (
                     <div>
-                        <button onClick={()=> props.toggleShowBarPage(bar.id)}>{bar.name}</button>
+                        <button onClick={()=> props.getSingleBarInfoAndPosts(bar.id)}>{bar.name}</button>
                         <p>{bar.id}</p>
                         {/* GIVEN I am on the TeamPage 
                         AND I see a List of bars
