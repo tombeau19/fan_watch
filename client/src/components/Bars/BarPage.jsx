@@ -1,6 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import PostList from '../Posts/PostList'
+//import PostList from '../Posts/PostList'
+import Moment from 'react-moment';
 
 const BarPage = (props) => {
 
@@ -11,10 +11,11 @@ const BarPage = (props) => {
             {props.bar.posts.map((post) => {
                 return (
                     <div>
-                        <hr/>
+                        <hr />
                         <h3>{post.title}</h3>
                         <p>{post.content}</p>
-                        <hr/>
+                        <p><Moment fromNow>{post.created_at}</Moment></p>
+                        <hr />
                     </div>
                 )
             })}

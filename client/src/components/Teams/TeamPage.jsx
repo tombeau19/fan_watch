@@ -38,17 +38,17 @@ class TeamPage extends Component {
     }
 
     getSingleBarInfoAndPosts = async (id) => {
-        if(this.state.showBarPage){
-            this.setState({showBarPage: !this.state.showBarPage})
+        if (this.state.showBarPage) {
+            this.setState({ showBarPage: !this.state.showBarPage })
         }
         try {
             const bar_id = id
             console.log(bar_id)
             const response = await axios.get(`/api/bars/${bar_id}`)
-            this.setState({ 
+            this.setState({
                 bar: response.data,
                 showBarPage: !this.state.showBarPage
-             })
+            })
         } catch (err) {
             console.log(err)
         }
