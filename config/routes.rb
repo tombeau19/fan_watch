@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :bars do
       resources :posts 
     end
+    get '/barsearch/:barname', to: "bar_search#show"
   end
+
+
 
 end
