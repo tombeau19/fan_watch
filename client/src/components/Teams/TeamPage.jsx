@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import BarList from '../Bars/BarList'
 import BarPage from '../Bars/BarPage'
+require('dotenv').config()
+
 
 class TeamPage extends Component {
 
@@ -43,7 +45,6 @@ class TeamPage extends Component {
         }
         try {
             const bar_id = id
-            console.log(bar_id)
             const response = await axios.get(`/api/bars/${bar_id}`)
             this.setState({
                 bar: response.data,
