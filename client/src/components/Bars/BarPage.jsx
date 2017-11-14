@@ -1,6 +1,6 @@
 import React from 'react'
 //import PostList from '../Posts/PostList'
-//import Moment from 'react-moment';
+import Moment from 'react-moment';
 
 const BarPage = (props) => {
 
@@ -8,8 +8,8 @@ const BarPage = (props) => {
         <div>
             <h1>{props.bar.name}</h1>
             <h4>Yelp Rating: {props.bar.rating}</h4>
-            <p>{props.bar.location.display_address}</p>
-            {/* {props.bar.posts.map((post) => {
+            <p>{props.bar.location}</p>
+            {props.bar.posts.map((post) => {
                 return (
                     <div>
                         <hr />
@@ -19,7 +19,7 @@ const BarPage = (props) => {
                         <hr />
                     </div>
                 )
-            })} */}
+            })}
             <img src={props.bar.image_url} alt={`${props.bar.name}`} />
 
         </div>

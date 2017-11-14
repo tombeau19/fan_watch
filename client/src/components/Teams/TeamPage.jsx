@@ -43,14 +43,9 @@ class TeamPage extends Component {
 
     searchForBarInfoAndPostToDataBase = async (event) => {
         event.preventDefault()
-        //takes in a barname as the search parameter
-        //makes an axios get call to /api/barsearch/:barname to search for the bar
         try {
-            //take the response.data and set to newBar state
             const search = this.state.search
-            
             const barResponse = await axios.get(`api/barsearch/${search}`)
-            
             const formattedResponse = {
                 name: barResponse.data.businesses[0].name,
                 rating: barResponse.data.businesses[0].rating,
@@ -59,9 +54,6 @@ class TeamPage extends Component {
                 location: barResponse.data.businesses[0].location.display_address
             }
             await this.setState({ newBar: formattedResponse })
-            //prompt user to confirm they did in fact enter the correct bar
-
-            //make an axios post to /api/bars to create a new bar
             const { team_id } = this.props.match.params
             const response = await axios.post(`/api/teams/${team_id}/bars`, {
                 bar: this.state.newBar
@@ -70,8 +62,6 @@ class TeamPage extends Component {
         } catch (err) {
             console.log(err)
         }
-        //then call getSingleTeamBars() in order to get all bars including the new one
-        //re-render page with new bar on page
     }
 
     getSingleBarInfoAndPosts = async (id) => {
@@ -80,7 +70,7 @@ class TeamPage extends Component {
         }
         try {
             const bar_id = id
-            const response = await axios.get(`/api/barfind/${bar_id}`)
+            const response = await axios.get(`/api/bars/${bar_id}`)
             this.setState({
                 bar: response.data,
                 showBarPage: !this.state.showBarPage
@@ -101,14 +91,10 @@ class TeamPage extends Component {
                 <h1>{this.state.team.name} Fan Page</h1>
                 <BarList bars={this.state.bars} bar={this.state.bar} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
 
-
-
                 <form onSubmit={this.searchForBarInfoAndPostToDataBase}>
                     <input onChange={this.handleChange} type='text' name='search' placeholder='Bar Name' />
                     <button>search</button>
                 </form>
-
-
 
                 {this.state.showBarPage ? <BarPage bar={this.state.bar} /> : null}
             </div>
