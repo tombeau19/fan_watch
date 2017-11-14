@@ -50,9 +50,25 @@ class TeamPage extends Component {
                 rating: barResponse.data.businesses[0].rating,
                 image_url: barResponse.data.businesses[0].image_url,
                 yelp_id: barResponse.data.businesses[0].id,
-                location: barResponse.data.businesses[0].location
+                address: barResponse.data.businesses[0].location.address1,
+                city: barResponse.data.businesses[0].location.city,
+                state: barResponse.data.businesses[0].location.state,
+                zip_code: barResponse.data.businesses[0].location.zip_code
             }
             await this.setState({ newBar: formattedResponse })
+            console.log(this.state.newBar)
+        } catch (err) {
+            console.log(err)
+        } try {
+            this.state.bars.map((bar) => {
+                if (bar.yelp_id === this.state.newBar.yelp_id) {
+                    alert('Already Exists')
+                    this.setState({ newBar: {} })
+                }
+            })
+        } catch (err) {
+            console.log(err)
+        } try {
             const { team_id } = this.props.match.params
             const response = await axios.post(`/api/teams/${team_id}/bars`, {
                 bar: this.state.newBar

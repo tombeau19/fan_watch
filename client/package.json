@@ -8,6 +8,7 @@
     "dotenv": "^4.0.0",
     "moment": "^2.19.2",
     "react": "^16.1.0",
+    "react-confirm-dialog": "^1.0.5",
     "react-dom": "^16.1.0",
     "react-moment": "^0.6.8",
     "react-router-dom": "^4.2.2",

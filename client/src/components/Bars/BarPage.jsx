@@ -8,7 +8,8 @@ const BarPage = (props) => {
         <div>
             <h1>{props.bar.name}</h1>
             <h4>Yelp Rating: {props.bar.rating}</h4>
-            <p>{props.bar.location}</p>
+            <p>{props.bar.address}</p>
+            <p>{props.bar.city} {props.bar.state}, {props.bar.zip_code}</p>
             {props.bar.posts.map((post) => {
                 return (
                     <div>

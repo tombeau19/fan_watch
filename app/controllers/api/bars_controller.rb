@@ -19,7 +19,7 @@ class Api::BarsController < ApplicationController
 
     private
     def bar_params
-        params.require(:bar).permit(:name, :rating, :image_url, :yelp_id)
+        params.require(:bar).permit(:name, :rating, :image_url, :yelp_id, :address, :city, :state, :zip_code)
     end
 
 end
