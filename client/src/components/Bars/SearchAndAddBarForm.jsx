@@ -4,7 +4,7 @@ const SearchAndAddBarForm = (props) => {
     return (
         <div>
             <form onSubmit={props.searchForBarInfoAndPostToDataBase}>
-                <input onChange={props.handleChange} type='text' name='search' placeholder='Bar Name' />
+                <input onChange={props.handleChange} type='text' name='search' value={props.search} placeholder='Bar Name' />
                 <button>search</button>
             </form>
 

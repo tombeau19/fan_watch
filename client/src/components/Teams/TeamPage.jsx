@@ -12,7 +12,8 @@ class TeamPage extends Component {
         newBar: {},
         bar: {},
         showBarPage: false,
-        search: ''
+        search: '',
+        anotherstate: {}
     }
 
     componentWillMount() {
@@ -55,7 +56,11 @@ class TeamPage extends Component {
                 state: barResponse.data.businesses[0].location.state,
                 zip_code: barResponse.data.businesses[0].location.zip_code
             }
-            await this.setState({ newBar: formattedResponse })
+            const emptySearch = ''
+            await this.setState({ 
+                newBar: formattedResponse,
+                search: emptySearch
+             })
             console.log(this.state.newBar)
         } catch (err) {
             console.log(err)
@@ -115,7 +120,7 @@ class TeamPage extends Component {
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
                 <h3>Dont see your favorite spot? Add below</h3>
-                <SearchAndAddBarForm handleChange={this.handleChange} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
+                <SearchAndAddBarForm handleChange={this.handleChange} search={this.state.search} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 <BarList bars={this.state.bars} bar={this.state.bar} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
                 {this.state.showBarPage ? <BarPage bar={this.state.bar} /> : null}
             </div>

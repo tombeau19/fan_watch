@@ -8,7 +8,7 @@ import TeamPage from './components/Teams/TeamPage'
 class App extends Component {
 
   state = {
-    teams: []
+    teams: [],
   }
 
   async componentWillMount() {
