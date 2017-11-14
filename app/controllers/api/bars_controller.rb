@@ -14,7 +14,7 @@ class Api::BarsController < ApplicationController
         @bar = Bar.new(bar_params)
         @team.bars << @bar 
         @team.save!
-        render json: @bar
+        render json: @team.bars.order(created_at: :desc)
     end
 
     private

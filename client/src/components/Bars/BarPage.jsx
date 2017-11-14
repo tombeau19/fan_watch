@@ -1,6 +1,6 @@
 import React from 'react'
 //import PostList from '../Posts/PostList'
-import Moment from 'react-moment';
+//import Moment from 'react-moment';
 
 const BarPage = (props) => {
 
@@ -20,7 +20,7 @@ const BarPage = (props) => {
                     </div>
                 )
             })} */}
-            <img src={props.bar.image_url} alt={`${props.bar.name} picture`} />
+            <img src={props.bar.image_url} alt={`${props.bar.name}`} />
 
         </div>
     )
