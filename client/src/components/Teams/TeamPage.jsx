@@ -45,7 +45,7 @@ class TeamPage extends Component {
         }
         try {
             const bar_id = id
-            const response = await axios.get(`/api/bars/${bar_id}`)
+            const response = await axios.get(`/api/barfind/${bar_id}`)
             this.setState({
                 bar: response.data,
                 showBarPage: !this.state.showBarPage

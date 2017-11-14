@@ -9,7 +9,7 @@ class YelpService
         headers = {
             "Authorization" => @access_token
         }
-        @response = HTTParty.get("https://api.yelp.com/v3/businesses/search?location=atlanta&categories=bars&limit=1&term=#{barname}", :headers => headers) 
+        @response = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{barname}&location=atlanta&categories=bars,restaurants,pubs&limit=1", :headers => headers) 
         @response
     end
 
@@ -18,7 +18,7 @@ class YelpService
         headers = {
             "Authorization" => @access_token
         }
-        @response = HTTParty.get("https://api.yelp.com/v3/businesses/search?location=atlanta&categories=bars&limit=1&term=#{barname}", :headers => headers) 
+        @response = HTTParty.get("https://api.yelp.com/v3/businesses/#{yelp_id}", :headers => headers) 
         @response
     end
 

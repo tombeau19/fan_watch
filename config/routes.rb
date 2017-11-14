@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :posts 
     end
     get '/barsearch/:barname', to: "bar_search#show"
+    get '/barfind/:yelp_id', to: "bar_find#show"
   end
 
 

@@ -7,7 +7,7 @@ const BarList = (props) => {
             {props.bars.map((bar) => {
                 return (
                     <div>
-                        <button onClick={() => props.getSingleBarInfoAndPosts(bar.id)}>{bar.name}</button>
+                        <button onClick={() => props.getSingleBarInfoAndPosts(bar.yelp_id)}>{bar.name}</button>
                     </div>
                 )
             })}
