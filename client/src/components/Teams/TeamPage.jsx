@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import BarList from '../Bars/BarList'
 import BarPage from '../Bars/BarPage'
-require('dotenv').config()
-
+import SearchAndAddBarForm from '../Bars/SearchAndAddBarForm'
 
 class TeamPage extends Component {
 
@@ -51,7 +50,7 @@ class TeamPage extends Component {
                 rating: barResponse.data.businesses[0].rating,
                 image_url: barResponse.data.businesses[0].image_url,
                 yelp_id: barResponse.data.businesses[0].id,
-                location: barResponse.data.businesses[0].location.display_address
+                location: barResponse.data.businesses[0].location
             }
             await this.setState({ newBar: formattedResponse })
             const { team_id } = this.props.match.params
@@ -86,16 +85,22 @@ class TeamPage extends Component {
 
     render() {
 
+        if (this.state.bars.length === 0) {
+            return (
+                <div>
+                    <h1>{this.state.team.name} Fan Page</h1>
+                    <h3>There is no bar to watch the {this.state.team.name}, add where you watch below!</h3>
+                    <SearchAndAddBarForm handleChange={this.handleChange} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
+                </div>
+            )
+        }
+
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
+                <h3>Dont see your favorite spot? Add below</h3>
+                <SearchAndAddBarForm handleChange={this.handleChange} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 <BarList bars={this.state.bars} bar={this.state.bar} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
-
-                <form onSubmit={this.searchForBarInfoAndPostToDataBase}>
-                    <input onChange={this.handleChange} type='text' name='search' placeholder='Bar Name' />
-                    <button>search</button>
-                </form>
-
                 {this.state.showBarPage ? <BarPage bar={this.state.bar} /> : null}
             </div>
         )
