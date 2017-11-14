@@ -20,7 +20,7 @@ const BarPage = (props) => {
                     </div>
                 )
             })} */}
-            <img src={props.bar.image_url} alt={`${props.bar.name} pictures`} />
+            <img src={props.bar.image_url} alt={`${props.bar.name} picture`} />
 
         </div>
     )
