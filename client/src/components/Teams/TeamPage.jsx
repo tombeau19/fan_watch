@@ -19,9 +19,6 @@ class TeamPage extends Component {
     async componentWillMount() {
         await this.getSingleTeam()
         await this.getSingleTeamBars()
-        window.location({
-            set_url: `/${this.state.team.name}`
-        })
     }
 
     getSingleTeam = async () => {
