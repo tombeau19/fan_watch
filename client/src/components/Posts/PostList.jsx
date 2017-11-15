@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import Moment from 'react-moment'
 import axios from 'axios'
 import EditPostForm from './EditPostForm'
+import NewPostForm from './NewPostForm'
+
 
 class PostList extends Component {
 
     state = {
         bar: {},
         post: {},
-        editPostDetails: false
+        editPostDetails: false,
+        showNewPostForm: false
     }
 
     componentWillMount = async () => {
@@ -25,6 +28,10 @@ class PostList extends Component {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    toggleNewPost = async () => {
+        await this.setState({showNewPostForm: !this.state.showNewPostForm})
     }
 
     toggleEditSinglePost = async (id) => {
@@ -53,10 +60,24 @@ class PostList extends Component {
         await this.setState({bar: response.data, editPostDetails: !this.state.editPostDetails})
     }
 
+    handleNewSubmit = async (event) => {
+        event.preventDefault()
+        const bar_id = this.state.bar.id
+        console.log(bar_id)
+        const newPost = { ...this.state.post }
+        console.log(newPost)
+        const response = await axios.post(`/api/bars/${bar_id}/posts/`, {
+            post: newPost
+        })
+        console.log(response.data)
+        await this.setState({bar: response.data, showNewPostForm: !this.state.showNewPostForm})
+    }
+
     render() {
         return (
             <div>
-                <button>Add A Comment</button>
+                <button onClick={this.toggleNewPost}>Add A Comment</button>
+                {this.state.showNewPostForm ? <NewPostForm post={this.state.post} handleChange={this.handleChange} handleNewSubmit={this.handleNewSubmit}/>: null}
                 {this.state.bar.posts.map((post) => {
                     if (post.id === this.state.post.id && this.state.editPostDetails === true) {
                         return (
@@ -85,7 +106,6 @@ class PostList extends Component {
                         )
                     }
                 })}
-
             </div>
         )
     }

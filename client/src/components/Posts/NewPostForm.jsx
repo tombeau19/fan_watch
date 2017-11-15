@@ -1,32 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-const EditPostForm = (props) => {
-
+const NewPostForm = (props) => {
     return (
         <div>
-            <form onSubmit={props.handleSubmit}>
-                <h2>Edit</h2>
+            <form onSubmit={props.handleNewSubmit}>
+                <h2>Add New Post</h2>
                 <div>
                     <input onChange={props.handleChange}
                         name='title'
                         type="text"
-                        value={props.post.title} 
+                        placeholder='Title'
                         size="2em" />
                 </div>
                 <div>
                     <textarea onChange={props.handleChange}
                         name='content'
                         type="text"
-                        value={props.post.content}
+                        placeholder='Leave Review Here'
                         size="4em" />
                 </div>
                 <div>
-                    <button>Update Post</button>
+                    <button>Add Post</button>
                 </div>
             </form>
         </div>
     )
-
 }
 
-export default EditPostForm
+export default NewPostForm

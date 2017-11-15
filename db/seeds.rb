@@ -1,6 +1,6 @@
 # Team.destroy_all
 # Bar.destroy_all
-# Post.destroy_all
+Post.destroy_all
 
 # # AFC EAST
 # Team.create({

@@ -14,7 +14,7 @@ class Api::PostsController < ApplicationController
         @post = Post.new(post_params)
         @bar.posts << @post 
         @bar.save!
-        render json: @bar.posts.order(created_at: :desc)
+        render json: @bar, include: [:posts]
     end
 
     def update
