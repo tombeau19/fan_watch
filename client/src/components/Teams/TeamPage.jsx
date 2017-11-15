@@ -16,9 +16,12 @@ class TeamPage extends Component {
         anotherstate: {}
     }
 
-    componentWillMount() {
-        this.getSingleTeam()
-        this.getSingleTeamBars()
+    async componentWillMount() {
+        await this.getSingleTeam()
+        await this.getSingleTeamBars()
+        window.location({
+            set_url: `/${this.state.team.name}`
+        })
     }
 
     getSingleTeam = async () => {
@@ -57,10 +60,10 @@ class TeamPage extends Component {
                 zip_code: barResponse.data.businesses[0].location.zip_code
             }
             const emptySearch = ''
-            await this.setState({ 
+            await this.setState({
                 newBar: formattedResponse,
                 search: emptySearch
-             })
+            })
         } catch (err) {
             console.log(err)
         } try {
@@ -76,8 +79,8 @@ class TeamPage extends Component {
                 if (bar.yelp_id === this.state.newBar.yelp_id) {
                     alert('Already Exists')
                     this.setState({ newBar: {} })
-                } 
-            }) 
+                }
+            })
         } catch (err) {
             console.log(err)
         } try {
