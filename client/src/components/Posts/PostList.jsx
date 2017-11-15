@@ -63,13 +63,10 @@ class PostList extends Component {
     handleNewSubmit = async (event) => {
         event.preventDefault()
         const bar_id = this.state.bar.id
-        console.log(bar_id)
         const newPost = { ...this.state.post }
-        console.log(newPost)
         const response = await axios.post(`/api/bars/${bar_id}/posts/`, {
             post: newPost
         })
-        console.log(response.data)
         await this.setState({bar: response.data, showNewPostForm: !this.state.showNewPostForm})
     }
 
