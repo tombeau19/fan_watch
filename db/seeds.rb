@@ -166,38 +166,38 @@ Post.create({
     bar_id: 95
 })
 
-Post.create({
-    title: 'aaaaaaa',
-    content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a panthers bar',
-    bar_id: 95
-})
+# Post.create({
+#     title: 'aaaaaaa',
+#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a panthers bar',
+#     bar_id: 95
+# })
 
-Post.create({
-    title: 'bbbbbbbbb',
-    content: 'We might as well have been at Panther stadium. Tons of people, tons of chants. Incredible place to watch the game.',
-    bar_id: 95
-})
+# Post.create({
+#     title: 'bbbbbbbbb',
+#     content: 'We might as well have been at Panther stadium. Tons of people, tons of chants. Incredible place to watch the game.',
+#     bar_id: 95
+# })
 
-Post.create({
-    title: 'ccccccccc',
-    content: 'What a great place to cheer the panthers onto victory. Also, the food was incredible awesome service. all around great time',
-    bar_id: 95
-})
+# Post.create({
+#     title: 'ccccccccc',
+#     content: 'What a great place to cheer the panthers onto victory. Also, the food was incredible awesome service. all around great time',
+#     bar_id: 95
+# })
 
-Post.create({
-    title: 'dddddddd',
-    content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a panthers bar',
-    bar_id: 95
-})
+# Post.create({
+#     title: 'dddddddd',
+#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a panthers bar',
+#     bar_id: 95
+# })
 
-Post.create({
-    title: 'eeeeeeeeeee',
-    content: 'We might as well have been at Panther stadium. Tons of people, tons of chants. Incredible place to watch the game.',
-    bar_id: 95
-})
+# Post.create({
+#     title: 'eeeeeeeeeee',
+#     content: 'We might as well have been at Panther stadium. Tons of people, tons of chants. Incredible place to watch the game.',
+#     bar_id: 95
+# })
 
-Post.create({
-    title: 'fffffffffffff',
-    content: 'What a great place to cheer the panthers onto victory. Also, the food was incredible awesome service. all around great time',
-    bar_id: 95
-})
+# Post.create({
+#     title: 'fffffffffffff',
+#     content: 'What a great place to cheer the panthers onto victory. Also, the food was incredible awesome service. all around great time',
+#     bar_id: 95
+# })

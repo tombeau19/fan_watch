@@ -23,7 +23,7 @@ class Api::PostsController < ApplicationController
         @post.update!(post_params)
         @bar.save!
 
-        render json: @bar.posts.order(created_at: :desc)
+        render json: @bar, include: [:posts]
     end
 
     def destroy

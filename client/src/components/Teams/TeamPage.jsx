@@ -128,7 +128,7 @@ class TeamPage extends Component {
                 <h1>{this.state.team.name} Fan Page</h1>
                 <h3>Dont see your favorite spot? Add below</h3>
                 <SearchAndAddBarForm handleChange={this.handleChange} search={this.state.search} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
-                <BarList bars={this.state.bars} bar={this.state.bar} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
+                <BarList bars={this.state.bars} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
                 {this.state.showBarPage ? <BarPage bar={this.state.bar} /> : null}
             </div>
         )
