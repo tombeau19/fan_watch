@@ -1,5 +1,5 @@
 # Team.destroy_all
-Bar.destroy_all
+# Bar.destroy_all
 # Post.destroy_all
 
 # # AFC EAST
@@ -150,18 +150,18 @@ Bar.destroy_all
 
 # Post.create({
 #     title: 'NO SOUND!!!',
-#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
-#     bar_id: 2
+#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a panthers bar',
+#     bar_id: 92
 # })
 
 # Post.create({
 #     title: 'Great Atmosphere',
-#     content: 'We might as well have been at Gillette stadium. Tons of people, tons of chants. Incredible place to watch the game.',
-#     bar_id: 1
+#     content: 'We might as well have been at Panther stadium. Tons of people, tons of chants. Incredible place to watch the game.',
+#     bar_id: 92
 # })
 
 # Post.create({
-#     title: 'NO SOUND!!!',
-#     content: 'I called the bar TWICE and was promised the would have the sound on but then the guy there would not turn off the music for the game. NOT a patriots bar',
-#     bar_id: 1
+#     title: 'Amazing food, Panther Mania!',
+#     content: 'What a great place to cheer the panthers onto victory. Also, the food was incredible awesome service. all around great time',
+#     bar_id: 92
 # })
