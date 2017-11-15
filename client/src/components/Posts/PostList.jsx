@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Moment from 'react-moment';
+import Moment from 'react-moment'
+import axios from 'axios'
 
 class PostList extends Component {
 
@@ -16,17 +17,14 @@ class PostList extends Component {
         this.setState({bar})
     }
 
-    deletePost = async () => {
+    deletePost = async (id) => {
         try {
-            const { city_id, id } = this.props.match.params
-            const response = await axios.delete(`/api/cities/${city_id}/posts/${id}`)
-            this.setState({
-                city: response.data,
-                redirectToCity: true,
-            })
+            const post_id = id
+            const bar_id = this.state.bar.id
+            const response = await axios.delete(`/api/bars/${bar_id}/posts/${post_id}`)
+            this.setState({ bar: response.data })
         } catch (error) {
             console.log(error)
-            await this.setState({ error: error.message })
         }
     }
 
@@ -42,7 +40,7 @@ class PostList extends Component {
                         <p>{post.content}</p>
                         <p><Moment fromNow>{post.created_at}</Moment></p>
                         <button>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={() => this.deletePost(post.id)}>Delete</button>
                         <hr />
                     </div>
                 )

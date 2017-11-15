@@ -30,7 +30,7 @@ class Api::PostsController < ApplicationController
         @bar = Bar.find(params[:bar_id])
         @bar.posts.delete(Post.find(params[:id]))
         @bar.save!
-        render json: @bar.posts
+        render json: @bar, include: [:posts]
     end
 
     private

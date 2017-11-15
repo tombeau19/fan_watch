@@ -65,9 +65,7 @@ class TeamPage extends Component {
             console.log(err)
         } try {
             const a = window.confirm(`${this.state.newBar.name} located at ${this.state.newBar.address}?`)
-            if (a === true) {
-                this.handleSubmit()
-            } else {
+            if (a !== true) {
                 alert('Try another bar')
                 this.setState({ newBar: {} })
             }
