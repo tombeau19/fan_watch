@@ -61,7 +61,16 @@ class TeamPage extends Component {
                 newBar: formattedResponse,
                 search: emptySearch
              })
-            console.log(this.state.newBar)
+        } catch (err) {
+            console.log(err)
+        } try {
+            const a = window.confirm(`${this.state.newBar.name} located at ${this.state.newBar.address}?`)
+            if (a === true) {
+                this.handleSubmit()
+            } else {
+                alert('Try another bar')
+                this.setState({ newBar: {} })
+            }
         } catch (err) {
             console.log(err)
         } try {
@@ -69,8 +78,8 @@ class TeamPage extends Component {
                 if (bar.yelp_id === this.state.newBar.yelp_id) {
                     alert('Already Exists')
                     this.setState({ newBar: {} })
-                }
-            })
+                } 
+            }) 
         } catch (err) {
             console.log(err)
         } try {
