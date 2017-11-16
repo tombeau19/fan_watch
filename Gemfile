@@ -46,3 +46,8 @@ gem 'omniauth'
 gem 'devise_token_auth'
 gem 'httparty'
 gem 'hirb'
+
+# t.string "address"
+# t.string "city"
+# t.string "state"
+# t.string "zip_code"

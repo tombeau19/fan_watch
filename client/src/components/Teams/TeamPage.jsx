@@ -120,6 +120,7 @@ class TeamPage extends Component {
             return (
                 <div>
                     <h1>{this.state.team.name} Fan Page</h1>
+                    <img src={this.state.team.logo} alt='team logo'/>
                     <h3>There is no bar to watch the {this.state.team.name}, add where you watch below!</h3>
                     <SearchAndAddBarForm handleChange={this.handleChange} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 </div>
@@ -129,6 +130,7 @@ class TeamPage extends Component {
         return (
             <div>
                 <h1>{this.state.team.name} Fan Page</h1>
+                <img src={this.state.team.logo} alt='team logo'/>
                 <h3>Dont see your favorite spot? Add below</h3>
                 <SearchAndAddBarForm handleChange={this.handleChange} search={this.state.search} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 <BarList bars={this.state.bars} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
