@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import HomePage from './components/HomePage'
+import TeamList from './components//Teams/TeamList'
 import TeamPage from './components/Teams/TeamPage'
-import NavBar from './components/NavBar'
-import TeamNavBar from './components/TeamNavBar'
+import NavBar from './components/NavBar/NavBar'
+import TeamNavBar from './components/NavBar/TeamNavBar'
 
 class App extends Component {
 
@@ -57,16 +57,16 @@ class App extends Component {
   }
 
   render() {
-    const HomePageComponent = () => (<HomePage getSingleTeam={this.getSingleTeam} teams={this.state.teams} />)
+    const TeamListComponent = () => (<TeamList getSingleTeam={this.getSingleTeam} teams={this.state.teams} />)
     const TeamPageComponent = () => (<TeamPage team={this.state.team} />)
     return (
       <Router>
         <div>
           {this.state.homePage ? <NavBar /> : <TeamNavBar setHomePageNavBar={this.setHomePageNavBar} team={this.state.team} />}
-          {this.state.redirectToTeamPage ? <Redirect to={`/${this.state.team.id}`} /> : <Redirect to={`/`} />}
+          {this.state.redirectToTeamPage ? <Redirect to={`/${this.state.team.name}`} /> : <Redirect to={`/`} />}
           <Switch>
-            <Route exact path='/' render={HomePageComponent} />
-            <Route exact path='/:team_id' render={TeamPageComponent} />
+            <Route exact path='/' render={TeamListComponent} />
+            <Route path='/:team_id' render={TeamPageComponent} />
           </Switch>
         </div>
       </Router>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomePage = (props) => {
+const TeamList = (props) => {
     return (
         <div>
             {
@@ -21,4 +21,4 @@ const HomePage = (props) => {
     )
 }
 
-export default HomePage
+export default TeamList

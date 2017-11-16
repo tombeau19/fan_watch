@@ -4,7 +4,6 @@ const NavBar = (props) => {
     return (
         <div>
             <div>Fan Watch</div>
-
         </div>
     )
 }
