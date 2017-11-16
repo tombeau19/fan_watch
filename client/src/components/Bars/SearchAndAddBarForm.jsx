@@ -1,5 +1,4 @@
 import React from 'react'
-import ConfirmLink from 'react-confirm-dialog'
 
 const SearchAndAddBarForm = (props) => {
     return (

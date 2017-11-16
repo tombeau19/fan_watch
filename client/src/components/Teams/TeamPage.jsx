@@ -18,17 +18,9 @@ class TeamPage extends Component {
     async componentWillMount() {
         await this.setState({team: this.props.team})
         await this.getSingleTeamBars()
+        console.log(Window.location)
+        await Window.location
     }
-
-    // getSingleTeam = async () => {
-    //     try {
-    //         const { team_id } = this.props.match.params
-    //         const response = await axios.get(`/api/teams/${team_id}`)
-    //         this.setState({ team: response.data })
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
 
     getSingleTeamBars = async () => {
         try {
