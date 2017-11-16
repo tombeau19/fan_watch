@@ -1,3 +1,3 @@
 class Team < ApplicationRecord
-    has_many :bars, dependent: :destroy
+    has_many :bars
 end
