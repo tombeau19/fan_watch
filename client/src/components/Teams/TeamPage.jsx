@@ -16,23 +16,23 @@ class TeamPage extends Component {
     }
 
     async componentWillMount() {
-        await this.getSingleTeam()
+        await this.setState({team: this.props.team})
         await this.getSingleTeamBars()
     }
 
-    getSingleTeam = async () => {
-        try {
-            const { team_id } = this.props.match.params
-            const response = await axios.get(`/api/teams/${team_id}`)
-            this.setState({ team: response.data })
-        } catch (err) {
-            console.log(err)
-        }
-    }
+    // getSingleTeam = async () => {
+    //     try {
+    //         const { team_id } = this.props.match.params
+    //         const response = await axios.get(`/api/teams/${team_id}`)
+    //         this.setState({ team: response.data })
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
 
     getSingleTeamBars = async () => {
         try {
-            const { team_id } = this.props.match.params
+            const team_id = this.state.team.id
             const response = await axios.get(`/api/teams/${team_id}/bars`)
             this.setState({ bars: response.data })
         } catch (err) {
@@ -84,7 +84,7 @@ class TeamPage extends Component {
         } catch (err) {
             console.log(err)
         } try {
-            const { team_id } = this.props.match.params
+            const team_id = this.state.team.id
             const response = await axios.post(`/api/teams/${team_id}/bars`, {
                 bar: this.state.newBar
             })

@@ -10,6 +10,7 @@ const HomePage = (props) => {
                         <div>
                             <h5>{team.name}</h5>
                             <Link to={`/${team.id}`}><img src={team.logo} alt={`${team.name} logo`} /></Link>
+                            <button onClick={() => props.getSingleTeam(team.id)}>{team.name}</button>
                         </div>
                     )
                 })
