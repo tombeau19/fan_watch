@@ -5,6 +5,7 @@ import axios from 'axios'
 import HomePage from './components/HomePage'
 import TeamPage from './components/Teams/TeamPage'
 import SignUpLogIn from './components/SignUpLogIn'
+import NavBar from './components/NavBar'
 
 import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "./util/SessionHeaderUtil"
 
@@ -92,10 +93,11 @@ getAllTeams = async () => {
 render() {
   const HomePageComponent = () => (<HomePage teams={this.state.teams} />)
   const SignUpLogInComponent = () => (<SignUpLogIn signUp={this.signUp} signIn={this.signIn} />)
+  const NavBarComponent = () => (<NavBar teams={this.state.teams}/>)
   return (
     <Router>
       <div>
-        <h1>Fan Watch</h1>
+        <NavBar/>
         <Switch>
           <Route exact path='/' render={HomePageComponent} />
           <Route exact path='/signUp' render={SignUpLogInComponent} />

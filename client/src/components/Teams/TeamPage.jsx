@@ -12,8 +12,7 @@ class TeamPage extends Component {
         newBar: {},
         bar: {},
         showBarPage: false,
-        search: '',
-        anotherstate: {}
+        search: ''
     }
 
     async componentWillMount() {
@@ -67,7 +66,11 @@ class TeamPage extends Component {
             const a = window.confirm(`${this.state.newBar.name} located at ${this.state.newBar.address}?`)
             if (a !== true) {
                 alert('Try another bar')
-                this.setState({ newBar: {} })
+                const emptySearch = ''
+                this.setState({ 
+                    newBar: {}, 
+                    search: emptySearch 
+                })
             }
         } catch (err) {
             console.log(err)
