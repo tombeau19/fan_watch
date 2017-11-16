@@ -63,7 +63,7 @@ class App extends Component {
       <Router>
         <div>
           {this.state.homePage ? <NavBar /> : <TeamNavBar setHomePageNavBar={this.setHomePageNavBar} team={this.state.team} />}
-          {this.state.redirectToTeamPage ? <Redirect to={`/${this.state.team.name}`} /> : <Redirect to={`/`} />}
+          {this.state.redirectToTeamPage ? <Redirect to={`/${this.state.team.nick_name}`} /> : <Redirect to={`/`} />}
           <Switch>
             <Route exact path='/' render={TeamListComponent} />
             <Route path='/:team_id' render={TeamPageComponent} />
