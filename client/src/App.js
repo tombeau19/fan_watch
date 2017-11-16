@@ -46,7 +46,10 @@ class App extends Component {
   }
 
   setHomePageNavBar = async () => {
-    await this.setState({ homePage: !this.state.homePage })
+    await this.setState({ 
+      redirectToTeamPage: !this.state.setRedirectToTeamPage,
+      homePage: !this.state.homePage,
+     })
   }
 
   setRedirectToTeamPage = async () => {
