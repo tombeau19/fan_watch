@@ -22,9 +22,9 @@ Team.create({
     nick_name: 'Titans'
 })
 Team.create({
-    name: 'Philadelphia Eagles',
-    logo: "http://content.sportslogos.net/logos/7/167/thumbs/960.gif",
-    nick_name: 'Eagles'
+    name: 'Washington Redskins',
+    logo: "http://content.sportslogos.net/logos/7/168/thumbs/im5xz2q9bjbg44xep08bf5czq.gif",
+    nick_name: 'Skins'
 })
 Team.create({
     name: 'Los Angeles Rams',
@@ -102,9 +102,9 @@ Team.create({
     nick_name: 'Texans'
 })
 Team.create({
-    name: 'Washington Redskins',
-    logo: "http://content.sportslogos.net/logos/7/168/thumbs/im5xz2q9bjbg44xep08bf5czq.gif",
-    nick_name: 'Skins'
+    name: 'Philadelphia Eagles',
+    logo: "http://content.sportslogos.net/logos/7/167/thumbs/960.gif",
+    nick_name: 'Eagles'
 })
 Team.create({
     name: 'Arizona Cardinals',

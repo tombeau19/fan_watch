@@ -105,8 +105,8 @@ class App extends Component {
         <div>
           {this.state.hideLanding ? <Landing>
             <Title>Fan Watch</Title>
-            <Intro>No more arguments on where to watch YOUR team</Intro>
-            <a onClick={this.setHideLanding} href="#secondHalf">
+            <Intro>No more arguing on where to watch YOUR team</Intro>
+            <a onClick={this.setHideLanding}>
               <Arrow src='https://alexkessock.com/img/icon_53743.png' alt='arrow icon' />
             </a>
           </Landing> : null}
@@ -117,7 +117,6 @@ class App extends Component {
               <Route exact path='/' render={TeamListComponent} />
               <Route path='/:team_id' render={TeamPageComponent} />
             </Switch>
-            <a id='secondHalf'></a>
           </div>
         </div>
       </Router>

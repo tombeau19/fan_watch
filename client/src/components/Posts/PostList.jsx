@@ -31,7 +31,7 @@ class PostList extends Component {
     }
 
     toggleNewPost = async () => {
-        await this.setState({showNewPostForm: !this.state.showNewPostForm})
+        await this.setState({ showNewPostForm: !this.state.showNewPostForm })
     }
 
     toggleEditSinglePost = async (id) => {
@@ -57,7 +57,7 @@ class PostList extends Component {
         const response = await axios.patch(`/api/bars/${bar_id}/posts/${id}`, {
             post: clonedPost
         })
-        await this.setState({bar: response.data, editPostDetails: !this.state.editPostDetails})
+        await this.setState({ bar: response.data, editPostDetails: !this.state.editPostDetails })
     }
 
     handleNewSubmit = async (event) => {
@@ -67,14 +67,14 @@ class PostList extends Component {
         const response = await axios.post(`/api/bars/${bar_id}/posts/`, {
             post: newPost
         })
-        await this.setState({bar: response.data, showNewPostForm: !this.state.showNewPostForm})
+        await this.setState({ bar: response.data, showNewPostForm: !this.state.showNewPostForm })
     }
 
     render() {
         return (
             <div>
                 <button onClick={this.toggleNewPost}>Add A Comment</button>
-                {this.state.showNewPostForm ? <NewPostForm post={this.state.post} handleChange={this.handleChange} handleNewSubmit={this.handleNewSubmit}/>: null}
+                {this.state.showNewPostForm ? <NewPostForm post={this.state.post} handleChange={this.handleChange} handleNewSubmit={this.handleNewSubmit} /> : null}
                 {this.state.bar.posts.map((post) => {
                     if (post.id === this.state.post.id && this.state.editPostDetails === true) {
                         return (
@@ -85,7 +85,7 @@ class PostList extends Component {
                                 <p><Moment fromNow>{post.created_at}</Moment></p>
                                 <button onClick={() => this.toggleEditSinglePost(post.id)}>Edit</button>
                                 <button onClick={() => this.deletePost(post.id)}>Delete</button>
-                                <EditPostForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} post={this.state.post}/>
+                                <EditPostForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} post={this.state.post} />
                                 <hr />
                             </div>
                         )
