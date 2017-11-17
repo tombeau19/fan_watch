@@ -125,7 +125,7 @@ class TeamPage extends Component {
             return (
                 <TeamContainer>
                     <Title>{this.state.team.name} Fan Page</Title>
-                    <h3>There is no bar to watch the {this.state.team.name}, search where you watch below!</h3>
+                    <h3>There is no bar to watch the {this.state.team.name}, search for one below!</h3>
                     <SearchAndAddBarForm handleChange={this.handleChange} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 </TeamContainer>
             )
@@ -134,7 +134,7 @@ class TeamPage extends Component {
         return (
             <TeamContainer>
                 <Title>{this.state.team.name} Fan Page</Title>
-                <h3>Dont see your favorite spot? Search below</h3>
+                <h3>Dont see your favorite spot? Search for the bar below</h3>
                 <SearchAndAddBarForm handleChange={this.handleChange} search={this.state.search} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 <BarList bars={this.state.bars} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
                 {this.state.showBarPage ? <BarPage bar={this.state.bar} /> : null}
