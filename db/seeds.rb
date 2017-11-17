@@ -97,7 +97,7 @@ Team.create({
 Team.create({
     name: 'Philadelphia Eagles',
     logo: "http://content.sportslogos.net/logos/7/167/thumbs/960.gif",
-    nick_name: 'FlyEaglesFly'
+    nick_name: 'Eagles'
 })
 Team.create({
     name: 'Dallas Cowboys',
@@ -124,7 +124,7 @@ Team.create({
 Team.create({
     name: 'Seattle Seahawks',
     logo: "http://content.sportslogos.net/logos/7/180/thumbs/pfiobtreaq7j0pzvadktsc6jv.gif",
-    nick_name: '12th-Man'
+    nick_name: 'Seahawks'
 })
 Team.create({
     name: 'Arizona Cardinals',
@@ -163,7 +163,7 @@ Team.create({
 Team.create({
     name: 'New Orleans Saints',
     logo: "http://content.sportslogos.net/logos/7/175/thumbs/907.gif",
-    nick_name: 'WhoDey'
+    nick_name: 'WhoDat'
 })
 Team.create({
     name: 'Carolina Panthers',
@@ -173,7 +173,7 @@ Team.create({
 Team.create({
     name: 'Atlanta Falcons',
     logo: "http://content.sportslogos.net/logos/7/173/thumbs/299.gif",
-    nick_name: '28-3'
+    nick_name: 'Falcons'
 })
 Team.create({
     name: 'Tampa Bay Buccaneers',
