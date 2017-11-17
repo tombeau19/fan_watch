@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TeamContainer = styled.div`
-
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-content: space-around;
 `
 
 const Team = styled.div`
 margin: 0;
-h5{
-    margin 0;
-}
+padding: 5px;
 `
 
 
@@ -20,7 +21,6 @@ const TeamList = (props) => {
                 props.teams.map((team) => {
                     return (
                         <Team>
-                            <h5>{team.name}</h5>
                             <button onClick={(event) => {
                                 event.preventDefault()
                                 props.getSingleTeam(team.id)
