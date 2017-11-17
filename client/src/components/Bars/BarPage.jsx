@@ -11,7 +11,6 @@ const BarPage = (props) => {
             <p>{props.bar.city} {props.bar.state}, {props.bar.zip_code}</p>
             <PostList bar={props.bar}/>
             <img src={props.bar.image_url} alt={`${props.bar.name}`} />
-
         </div>
     )
 

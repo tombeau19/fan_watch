@@ -5,6 +5,18 @@ import BarPage from '../Bars/BarPage'
 import SearchAndAddBarForm from '../Bars/SearchAndAddBarForm'
 import styled from 'styled-components'
 
+const Title = styled.h1`
+text-align: center;
+font-family: 'Coda Caption', sans-serif;
+`
+
+const TeamContainer = styled.div`
+display: flex;
+align-items: center;
+flex-direction: column;
+flex-wrap: wrap;
+`
+
 class TeamPage extends Component {
 
     state = {
@@ -111,22 +123,22 @@ class TeamPage extends Component {
 
         if (this.state.bars.length === 0) {
             return (
-                <div>
-                    <h1>{this.state.team.name} Fan Page</h1>
-                    <h3>There is no bar to watch the {this.state.team.name}, add where you watch below!</h3>
+                <TeamContainer>
+                    <Title>{this.state.team.name} Fan Page</Title>
+                    <h3>There is no bar to watch the {this.state.team.name}, search where you watch below!</h3>
                     <SearchAndAddBarForm handleChange={this.handleChange} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
-                </div>
+                </TeamContainer>
             )
         }
 
         return (
-            <div>
-                <h1>{this.state.team.name} Fan Page</h1>
-                <h3>Dont see your favorite spot? Add below</h3>
+            <TeamContainer>
+                <Title>{this.state.team.name} Fan Page</Title>
+                <h3>Dont see your favorite spot? Search below</h3>
                 <SearchAndAddBarForm handleChange={this.handleChange} search={this.state.search} searchForBarInfoAndPostToDataBase={this.searchForBarInfoAndPostToDataBase} />
                 <BarList bars={this.state.bars} getSingleBarInfoAndPosts={this.getSingleBarInfoAndPosts} />
                 {this.state.showBarPage ? <BarPage bar={this.state.bar} /> : null}
-            </div>
+            </TeamContainer>
         )
     }
 }
