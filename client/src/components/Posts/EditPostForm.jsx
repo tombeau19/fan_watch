@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactTooltip from 'react-tooltip'
 
 const EditPostForm = (props) => {
 
@@ -10,6 +11,7 @@ const EditPostForm = (props) => {
                     <input onChange={props.handleChange}
                         name='title'
                         type="text"
+                        data-tip={props.post.title}
                         value={props.post.title} 
                         size="2em" />
                 </div>
@@ -24,6 +26,7 @@ const EditPostForm = (props) => {
                     <button>Update Post</button>
                 </div>
             </form>
+            <ReactTooltip/>
         </div>
     )
 

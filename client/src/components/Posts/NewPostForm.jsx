@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactTooltip from 'react-tooltip'
 
 const NewPostForm = (props) => {
     return (
@@ -9,20 +10,21 @@ const NewPostForm = (props) => {
                     <input onChange={props.handleChange}
                         name='title'
                         type="text"
-                        placeholder='Title'
+                        data-tip='Title'
                         size="2em" />
                 </div>
                 <div>
                     <textarea onChange={props.handleChange}
                         name='content'
                         type="text"
-                        placeholder='Leave Review Here'
+                        data-tip='Leave Review Here'
                         size="4em" />
                 </div>
                 <div>
                     <button>Add Post</button>
                 </div>
             </form>
+            <ReactTooltip/>
         </div>
     )
 }
