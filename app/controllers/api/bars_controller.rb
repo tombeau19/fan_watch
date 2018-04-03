@@ -1,4 +1,5 @@
 class Api::BarsController < ApplicationController
+    
     def index
         @bars = Team.find(params[:team_id]).bars.order(created_at: :desc)
         render json: @bars
